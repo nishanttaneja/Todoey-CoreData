@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  ListViewController.swift
 //  Todoey
 //
 //  Created by Nishant Taneja on 10/09/20.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
-    // IBOutlet
+class ListViewController: UIViewController {
+    //IBOutlet
     @IBOutlet weak var tableView: UITableView!
-    // IBAction
+    //IBACtion
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {}
 }

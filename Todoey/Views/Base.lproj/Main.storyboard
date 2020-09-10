@@ -10,7 +10,7 @@
         <!--Category-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Category" id="BYZ-38-t0r" customClass="ViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Category" id="BYZ-38-t0r" customClass="CategoryViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,9 +30,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Todoey" largeTitleDisplayMode="always" id="7xo-fm-cXM">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="FYT-cL-J4U"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="FYT-cL-J4U">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="8ac-7G-oWu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="HIm-I7-nPN" id="anP-zi-DPJ"/>
                         <segue destination="ejf-Nh-Wei" kind="show" identifier="CategoryToListScene" id="RmN-2C-asx"/>
                     </connections>
                 </viewController>
@@ -43,7 +48,7 @@
         <!--List-->
         <scene sceneID="tdv-3Q-SG7">
             <objects>
-                <viewController title="List" id="ejf-Nh-Wei" sceneMemberID="viewController">
+                <viewController title="List" id="ejf-Nh-Wei" customClass="ListViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3fY-ct-6t4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,8 +75,15 @@
                         <viewLayoutGuide key="safeArea" id="d21-2P-jEN"/>
                     </view>
                     <navigationItem key="navigationItem" id="3MU-lU-XQN">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Lha-T6-6Ya"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Lha-T6-6Ya">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="ejf-Nh-Wei" id="dBZ-8v-NvK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="zje-i0-rX9" id="hpj-mH-tCf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFz-eI-dEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
