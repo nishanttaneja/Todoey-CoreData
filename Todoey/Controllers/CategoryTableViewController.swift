@@ -21,7 +21,25 @@ class CategoryTableViewController: UITableViewController {
     }
     
     //MARK:- IBAction
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {}
+    /// When + UIBarButtonItem (rightBarButtonItem) is pressed, an UIAlertController is displayed to create new Category.
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        var textField = UITextField()
+        let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add", style: .default) { (alertAction) in
+            if textField.text != nil || textField.text != "" {
+                let newCategory = Category(context: self.context)
+                newCategory.name = textField.text!
+                self.categories.append(newCategory)
+                self.saveCategories()
+            }
+        }
+        alert.addAction(action)
+        alert.addTextField { (alertTextField) in
+            textField = alertTextField
+            textField.placeholder = "New category"
+        }
+        present(alert, animated: true, completion: nil)
+    }
     
     //MARK:- TableView Delegate|DataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,10 +56,18 @@ class CategoryTableViewController: UITableViewController {
     private func loadCategories() {
         let request: NSFetchRequest<Category> = Category.fetchRequest()
         do {
-            categories = try context.fetch(request);
+            categories = try context.fetch(request)
             tableView.reloadData()
         }
         catch {print("error loading categories")}
+    }
+    /// This function saves newly created Category.
+    private func saveCategories() {
+        do {
+            try context.save()
+            tableView.reloadData()
+        }
+        catch {print("error saving new category")}
     }
 }
 

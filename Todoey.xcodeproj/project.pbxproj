@@ -28,6 +28,7 @@
 		B45888EA2509EFD000EF6780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B45888F12509F1C100EF6780 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		B45888F42509F1F100EF6780 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		B45888F62509FC5100EF6780 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 		B45888CD2509EFCC00EF6780 = {
 			isa = PBXGroup;
 			children = (
+				B45888F62509FC5100EF6780 /* README.md */,
 				B45888D82509EFCC00EF6780 /* Todoey */,
 				B45888D72509EFCC00EF6780 /* Products */,
 			);
