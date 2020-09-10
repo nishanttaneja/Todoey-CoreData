@@ -13,10 +13,7 @@ class ItemTableViewController: UITableViewController {
     // Initialise
     var items = [Item]()
     var parentCategory: Category? {
-        didSet {
-            navigationItem.title = parentCategory?.title
-            loadItems()
-        }
+        didSet {loadItems()}
     }
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -44,6 +41,15 @@ class ItemTableViewController: UITableViewController {
         }
         present(alert, animated: true, completion: nil)
     }
+    
+    //MARK:- Override ViewLifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // NavigationItem Title
+        navigationItem.title = parentCategory?.title
+        // SearchBar Delegate
+        searchBar.delegate = self
+    }
 
     //MARK:- TableView Delegate|DataSource
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -64,10 +70,10 @@ class ItemTableViewController: UITableViewController {
     
     //MARK:- CoreData
     /// This function is used to fetch categories.
-    private func loadItems() {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
+    private func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
         let categoryPredicate = NSPredicate(format: "parentCategory.title MATCHES %@", parentCategory!.title!)
-        request.predicate = categoryPredicate
+        if let additionalPredicate = predicate {request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])}
+        else {request.predicate = categoryPredicate}
         do {
             items = try context.fetch(request)
             tableView.reloadData()
@@ -81,5 +87,14 @@ class ItemTableViewController: UITableViewController {
             tableView.reloadData()
         }
         catch {print("error saving new items")}
+    }
+}
+
+//MARK:- SearchBar Delegate
+extension ItemTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var filterStringPredicate: NSPredicate?
+        if searchText.count > 0 {filterStringPredicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText)}
+        loadItems(predicate: filterStringPredicate)
     }
 }
