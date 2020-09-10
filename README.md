@@ -7,11 +7,11 @@ A Todo list application with sublist functionality using CoreData.
 <img src="Screenshots/CategoryScene.png" width="200"> <img src="Screenshots/AddNewCategoryScene.png" width="200"> <img src="Screenshots/ItemsScene.png" width="200"> <img src="Screenshots/AddNewItemScene.png" width="200">
 
 ## Technologies
-- Swift Programming Language
+- <a href="http://developer.apple.com/documentation/swift">Swift Programming Language</a>
 - Storyboard
-- UIKit 
-    - Navigation Controller | UIBarButtonItem
-    - UITableViewController
-    - UISearchBar | UISearchBarDelegate
-    - UIAlertController | UIAlertAction | UITextField 
-- Core Data - NSManagedObjectContext | NSFetchRequest<NSFetchRequestResult>
+- <a href="https://developer.apple.com/documentation/uikit">UIKit</a>
+    - <a href="https://developer.apple.com/documentation/uikit/uinavigationcontroller">UINavigationController</a> | <a href="https://developer.apple.com/documentation/uikit/uibarbuttonitem">UIBarButtonItem</a>
+    - <a href="https://developer.apple.com/documentation/uikit/uitableviewcontroller">UITableViewController</a>
+    - <a href="https://developer.apple.com/documentation/uikit/uisearchbar">UISearchBar</a> | <a href="https://developer.apple.com/documentation/uikit/uisearchbardelegate">UISearchBarDelegate</a>
+    - <a href="https://developer.apple.com/documentation/uikit/uialertcontroller">UIAlertController</a> | <a href="https://developer.apple.com/documentation/uikit/uialertaction">UIAlertAction</a> | <a href="https://developer.apple.com/documentation/uikit/uitextfield">UITextField</a>
+- <a href="https://developer.apple.com/documentation/coredata">Core Data</a> - <a href="https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext">NSManagedObjectContext</a> | <a href="https://developer.apple.com/documentation/coredata/nsfetchrequest">NSFetchRequest<NSFetchRequestResult></a>
