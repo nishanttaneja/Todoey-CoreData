@@ -30,7 +30,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Todoey" largeTitleDisplayMode="always" id="DWU-AF-ef0">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="QN1-fW-ReL"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="QN1-fW-ReL">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="reW-4i-y0u" id="A3d-hA-FCe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="MlA-co-SLW" kind="show" id="Wzk-pv-4ZP"/>
@@ -69,8 +73,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="iNK-Ux-8oy">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="TCQ-Ko-hXi"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="TCQ-Ko-hXi">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="MlA-co-SLW" id="oTa-1W-Bxg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="4Bw-cG-JXA" id="iiX-tR-Smx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDc-LX-Yr5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

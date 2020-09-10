@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  CategoryTableViewController.swift
 //  Todoey
 //
 //  Created by Nishant Taneja on 10/09/20.
@@ -10,21 +10,28 @@ import UIKit
 import CoreData
 
 class CategoryTableViewController: UITableViewController {
-    // IBOutlet
-    @IBOutlet weak var tableView: UITableView!
-    
-    // Initialise
+    //MARK:- Initialise
     private var categories = [Category]()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    // Override View Method
+    //MARK:- View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCategories()
     }
     
-    // IBAction
+    //MARK:- IBAction
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {}
+    
+    //MARK:- TableView Delegate|DataSource
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categories.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+        cell.textLabel?.text = categories[indexPath.row].name
+        return cell
+    }
     
     //MARK:- CoreData
     /// This function is used to fetch categories.
@@ -38,14 +45,3 @@ class CategoryTableViewController: UITableViewController {
     }
 }
 
-//MARK:- TableView Delegate|DataSource
-extension CategoryTableViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-        cell.textLabel?.text = categories[indexPath.row].name
-        return cell
-    }
-}

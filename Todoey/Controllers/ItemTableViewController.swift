@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  ItemTableViewController.swift
 //  Todoey
 //
 //  Created by Nishant Taneja on 10/09/20.
@@ -9,8 +9,7 @@
 import UIKit
 
 class ItemTableViewController: UITableViewController {
-    //IBOutlet
-    @IBOutlet weak var tableView: UITableView!
-    //IBACtion
+    //MARK:- IBOutlet | IBAction
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {}
 }
