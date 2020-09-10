@@ -29,6 +29,10 @@
 		B45888F12509F1C100EF6780 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		B45888F42509F1F100EF6780 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		B45888F62509FC5100EF6780 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B45888F8250A1D1600EF6780 /* CategoryScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CategoryScene.png; sourceTree = "<group>"; };
+		B45888F9250A1D1600EF6780 /* AddNewItemScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddNewItemScene.png; sourceTree = "<group>"; };
+		B45888FA250A1D1600EF6780 /* AddNewCategoryScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddNewCategoryScene.png; sourceTree = "<group>"; };
+		B45888FB250A1D1600EF6780 /* ItemsScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ItemsScene.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				B45888F62509FC5100EF6780 /* README.md */,
+				B45888F7250A1D0800EF6780 /* Screenshots */,
 				B45888D82509EFCC00EF6780 /* Todoey */,
 				B45888D72509EFCC00EF6780 /* Products */,
 			);
@@ -89,6 +94,17 @@
 				B45888F42509F1F100EF6780 /* ItemTableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B45888F7250A1D0800EF6780 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				B45888FA250A1D1600EF6780 /* AddNewCategoryScene.png */,
+				B45888F9250A1D1600EF6780 /* AddNewItemScene.png */,
+				B45888F8250A1D1600EF6780 /* CategoryScene.png */,
+				B45888FB250A1D1600EF6780 /* ItemsScene.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
