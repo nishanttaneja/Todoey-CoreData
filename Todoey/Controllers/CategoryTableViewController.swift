@@ -50,6 +50,10 @@ class CategoryTableViewController: UITableViewController {
         cell.textLabel?.text = categories[indexPath.row].name
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "CategoryToItemScene", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     //MARK:- CoreData
     /// This function is used to fetch categories.
@@ -68,6 +72,16 @@ class CategoryTableViewController: UITableViewController {
             tableView.reloadData()
         }
         catch {print("error saving new category")}
+    }
+    
+    //MARK:- Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "CategoryToItemScene" {print("unidentified segue identifier"); return}
+        // Update NavigationBar Title
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
+            let itemTableViewController = segue.destination
+            itemTableViewController.navigationItem.title = self.categories[selectedIndexPath.row].name
+        }
     }
 }
 
