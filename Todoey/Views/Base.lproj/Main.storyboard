@@ -37,7 +37,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="MlA-co-SLW" kind="show" id="Wzk-pv-4ZP"/>
+                        <segue destination="MlA-co-SLW" kind="show" identifier="CategoryToItemScene" id="Wzk-pv-4ZP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfm-JG-AGC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
