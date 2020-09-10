@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CategoryViewController: UIViewController {
+class CategoryTableViewController: UITableViewController {
     // IBOutlet
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,7 +39,7 @@ class CategoryViewController: UIViewController {
 }
 
 //MARK:- TableView Delegate|DataSource
-extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
+extension CategoryTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }

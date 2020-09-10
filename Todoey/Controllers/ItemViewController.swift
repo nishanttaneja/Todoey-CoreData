@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class ItemTableViewController: UITableViewController {
     //IBOutlet
     @IBOutlet weak var tableView: UITableView!
     //IBACtion
