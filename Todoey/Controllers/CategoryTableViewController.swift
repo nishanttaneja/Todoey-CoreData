@@ -28,7 +28,7 @@ class CategoryTableViewController: UITableViewController {
         let action = UIAlertAction(title: "Add", style: .default) { (alertAction) in
             if textField.text != nil || textField.text != "" {
                 let newCategory = Category(context: self.context)
-                newCategory.name = textField.text!
+                newCategory.title = textField.text!
                 self.categories.append(newCategory)
                 self.saveCategories()
             }
@@ -47,7 +47,7 @@ class CategoryTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-        cell.textLabel?.text = categories[indexPath.row].name
+        cell.textLabel?.text = categories[indexPath.row].title
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -79,8 +79,8 @@ class CategoryTableViewController: UITableViewController {
         if segue.identifier != "CategoryToItemScene" {print("unidentified segue identifier"); return}
         // Update NavigationBar Title
         if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
-            let itemTableViewController = segue.destination
-            itemTableViewController.navigationItem.title = self.categories[selectedIndexPath.row].name
+            let itemTableViewController = segue.destination as! ItemTableViewController
+            itemTableViewController.parentCategory = categories[selectedIndexPath.row]
         }
     }
 }
